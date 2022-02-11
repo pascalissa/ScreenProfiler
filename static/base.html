@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}HTMLElements.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}bootstrap.min.js">
+    <link rel="icon" href="{{ STATIC_PREFIX }}images/favicon.png">
+    <script type="text/javascript">
+        function toggle(element_id) {
+            var x = document.getElementById(element_id);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <title>Screen Profiler</title>
+</head>
+<body >
+
+
+<div class="container">
+    {% for thumbnail in thumbnails %}
+    <div class="row">
+        <div class="col">&nbsp;</div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {{ thumbnail.0 }}
+        </div>
+        <div class="col">
+            {{ thumbnail.1 }}
+        </div>
+        <div class="col">
+            {{ thumbnail.2 }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
